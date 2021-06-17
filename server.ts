@@ -4,7 +4,7 @@ let express = require("express"),
     server = express(),
     util = require("util"),
     colors = require("colors"),
-    port = "8080" || process.env.port;
+    port = process.env.PORT || 80
 
     server.use(bodyParser.urlencoded({ extended: false }));
     server.use(bodyParser.json());
