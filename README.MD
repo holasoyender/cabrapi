@@ -11,3 +11,7 @@ let { body } = await superagent.get("https://cabrapi.herokuapp.com/");
         if(!{ body }) return;
         return body.url;
 ```
+
+## Añade mas cabras!
+
+Puedes añadir mas cabras a esta API haciendo un Pull request con más fotos en la carpeta [img](https://github.com/holasoyender/cabrapi/tree/master/img) (Siguiendo el orden claro)
