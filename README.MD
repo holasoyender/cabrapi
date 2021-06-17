@@ -1,4 +1,4 @@
-# 🐈 Mira pol he hecho una API para cabras
+# 🐐 Mira pol he hecho una API para cabras
 
 Simple API que muestra una foto aleatoria de una cabra hecha para el bot [LA CABRA](https://lacabra.app)
 
