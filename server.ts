@@ -1,3 +1,10 @@
+/*Leer el README.MD antes de usar ^^*/ 
+
+const VPSurl = "https://cabrapi.herokuapp.com"; //Cambiar a la URL de tu API
+
+/*La razón de que se tenga que especificar el URL es un problema de express.js con el uso de 
+NGINX o Apache, y es mas facil ponerlo como una constante en el archivo.*/ 
+
 let express = require("express"),
     bodyParser = require('body-parser'),
     fs = require("fs"),
@@ -10,17 +17,15 @@ let express = require("express"),
     server.use(bodyParser.json());
 
 /*Encontrar una cabra*/ 
-    function cabra(host) {  
+    function cabra() {  
         let imgs = fs.readdirSync("./img/").filter((f) => f.endsWith(".jpg"));
-        let cabra = "http://"+host+"/img/"+imgs[Math.floor(Math.random() * imgs.length)].replace(".jpg", "");
+        let cabra = VPSurl+"/img/"+imgs[Math.floor(Math.random() * imgs.length)].replace(".jpg", "");
         return cabra;
     }
-
   
 /*Cabras*/
 server.get('/', (req, res) => {
-    let host = req.get('host')
-    res.status(200).send({ status: 200, url:  cabra(host) })
+    res.status(200).send({ status: 200, url:  cabra() })
     }    
 );
 
